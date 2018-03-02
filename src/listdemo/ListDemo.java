@@ -21,6 +21,7 @@ public class ListDemo {
             System.out.println("4. Delete at position");
             System.out.println("5. Check empty");
             System.out.println("6. Get size");
+            System.out.println("7. Exclude Elements Of Value Above");
             
             int choice = scan.nextInt();
             switch (choice) {
@@ -57,6 +58,21 @@ public class ListDemo {
                     break;
                 case 6:
                     System.out.println("Size = " + list.getSize() + " \n");
+                    break;
+                    
+                case 7:                    
+                    System.out.println("Enter the Value"
+                            + " (elements greater than given value will get eliminated)"
+                    );
+                    int value = scan.nextInt();
+                    
+                    System.out.println("Before: ");
+                    list.display();
+                    
+                    list = LinkedList.excludeGreaterThan(list, value);
+                    
+                    System.out.println("After: ");                   
+                    
                     break;
                 default:
                     System.out.println("Wrong Entry \n ");

@@ -135,4 +135,21 @@ protected Node start;
         }
         System.out.print(ptr.getData()+ "\n");
     }    
+
+    public static LinkedList excludeGreaterThan(LinkedList originalList, int value) {
+
+        LinkedList newList = new LinkedList();
+        
+        Node ptr = originalList.start;
+        while (ptr != null)
+        {
+            if (ptr.getData() <= value) {
+                newList.insertAtEnd(ptr.getData());
+            }
+            
+            ptr = ptr.getLink();
+        }
+        
+        return newList;
+    }
 }
